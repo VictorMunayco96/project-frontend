@@ -1,0 +1,47 @@
+<p-dialog [header]="header" [(visible)]="isOpenModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+  [resizable]="false">
+  <form [formGroup]="saleDetail">
+    <section class="form">
+      <span class="item-form">
+        <label>Nombres</label>
+        <input type="text" formControlName="names" pInputText>
+      </span>
+      <span class="item-form">
+        <label>Apellidos</label>
+        <input type="text" formControlName="lastName" pInputText>
+      </span>
+      <span class="item-form">
+        <label>DNI</label>
+        <input type="text" formControlName="dni" pInputText>
+      </span>
+      <span class="item-form">
+        <label>Teléfono</label>
+        <input type="text" formControlName="phoneNumber" pInputText>
+      </span>
+      <span class="item-form">
+        <label>Email</label>
+        <input type="text" formControlName="email" pInputText>
+      </span>
+    </section>
+    <br>
+    <section class="table-products">
+      <app-sales-table [cols]="cols" [values]="values"></app-sales-table>
+    </section>
+    <br>
+    <section class="total">
+      <span class="item-form">
+        <label>Fecha</label>
+        <p-calendar formControlName="date" [showIcon]="true" inputId="dateformat" dateFormat="yy-mm-dd"
+          [readonlyInput]="true"></p-calendar>
+      </span>
+      <span class="item-form">
+        <label>Total</label>
+        <span>{{total | currency: "S/"}}</span>
+      </span>
+    </section>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-times" (click)="closeModal()" label="Cerrar" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

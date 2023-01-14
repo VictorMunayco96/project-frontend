@@ -1,0 +1,8 @@
+<section class="container-sales">
+  <section class="searcher">
+    <p-calendar [formControl]="date" [showIcon]="true" inputId="dateformat" dateFormat="yy-mm-dd"></p-calendar>
+    <button pButton type="button" label="Buscar" (click)="getSalesForDate()"></button>
+  </section>
+  <app-sales-table *ngIf="sales" [cols]="cols" [values]="sales" (action)="openModalDetail($event)"></app-sales-table>
+  <app-sales-modal-form #modal></app-sales-modal-form>
+</section>

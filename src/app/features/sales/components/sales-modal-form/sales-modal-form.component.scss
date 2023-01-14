@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+
+  .item-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    margin-bottom: 1em;
+  }
+}
+
+.total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .item-form {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+  }
+}
